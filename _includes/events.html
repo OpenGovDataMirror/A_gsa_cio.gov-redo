@@ -1,0 +1,37 @@
+{% comment %}
+This section is for upcoming events for the cio council. The events pull from the _events folder. The "content news" name class is the anchor for the skip nav link before the Twitter feed.
+{% endcomment %}
+
+<h3><a class="text-no-underline" href="{{ site.baseurl }}/programs-and-events/" name="content-news">Upcoming Events</a></h3>
+{% assign today_date = 'now' | date:'%s' %}
+
+{% for events in site.events %}
+{% assign event_date = events.end-date | date: '%s' %}
+{% if event_date >= today_date and events.featured  %}
+
+<p class="card-tag">
+  {% if events.start-date %}
+  {{ events.start-date | date: '%a, %b %d, %Y' }} -
+  {% endif %}
+  {{ events.end-date | date: '%a, %b %d, %Y' }}
+</p>
+
+<!-- Do not wrap each element in a hyperlink, the resulting "focus" box is clunky-->
+{% if events.title contains 'CIO Council Meeting' %}
+  <p class="title-news padding-top-1"><a class="no-formatting" href="{{ site.baseurl }}/about/operations/">{{ events.title }}</a></p>
+  <p class="description"><a class="no-formatting" href="{{ site.baseurl }}/about/operations/" tabIndex="-1">{{ events.description }}</a></p>
+</a>
+{% else %}
+  {% if events.link %}
+  <p class="title-news padding-top-1"><a class="no-formatting" href="{{ site.baseurl }}{{ events.link }}">{{ events.title }}</a></p>
+  <p class="description"><a class="no-formatting" href="{{ site.baseurl }}{{ events.link }}" tabIndex="-1">{{ events.description }}</a></p>
+  {% elsif events.external_url  %}
+  <p class="title-news padding-top-1"><a class="no-formatting" href="https://{{ events.external_url }}">{{ events.title }}</a></p>
+  <p class="description"><a class="no-formatting" href="https://{{ events.external_url }}" tabIndex="-1">{{ events.description }}</a></p>
+  {% endif %}
+
+</a>
+{% endif %}
+
+{% endif %}
+{% endfor %}

@@ -1,0 +1,80 @@
+{% comment %}
+You shouldn't have to edit this page very often. But if you want to modify some of the meta-data for the
+site, this is the place to do it.
+{% endcomment %}
+<!DOCTYPE html>
+<!--[if lt IE 9]>
+<html class="lt-ie9">
+<![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en">
+<!--<![endif]-->
+<head>
+<!-- Basic Page Needs
+    ================================================== -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <meta name="robots" content="index,follow">
+  <meta name="google-site-verification" content="WZf88YHAlO9rMrrv3H_8ey1FgiW8xJNvDkeIStp3tb0" />
+  <!-- Mobile Specific Metas
+    ================================================== -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Title and meta description
+    ================================================== -->
+  <title>{{ page.title }} | {{site.title}}</title>
+  <meta property="og:title" content="{{page.title}}">
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@{{site.twitter}}" />
+  <meta name="twitter:title" content="{{page.title}}" />
+  <meta property="twitter:domain" content="{{site.baseurl}}">
+  {% if page.layout == "post" %}
+    <meta name="description" content="{{page.excerpt}}">
+    <meta property="og:description" content="{{page.excerpt}}">
+    <meta name="twitter:description" content="{{page.excerpt}}" />
+  {% else%}
+    <meta name="description" content="{{page.description}}">
+    <meta property="og:description" content="{{page.description}}">
+    <meta name="twitter:description" content="{{page.description}}" />
+  {% endif %}
+  {% if page.Mimage %}
+    <meta property='og:image' content='https://www.cio.gov/{{page.Mimage}}' />
+    <meta name="twitter:image" content="https://www.cio.gov/{{page.Mimage}}">
+  {% else %}
+    <meta property='og:image' content='https://www.cio.gov/assets/images/logos/CIO-logo-preview.png' />
+    <meta name="twitter:image" content="https://www.cio.gov/assets/images/logos/CIO-logo-preview.png">
+  {% endif %}
+
+
+
+  <meta property="og:type" content="article">
+  <link rel="canonical" href="{{ page.url | absolute_url }}" />
+  <meta property="og:url" content="{{ page.url | absolute_url }}" />
+  <!-- Favicons
+    ================================================== -->
+  <!-- 128x128 -->
+  <link rel="shortcut icon" type="image/ico" href="{{site.baseurl}}/assets/uswds/img/favicons/favicon-logo.png">
+  <link rel="icon" type="image/png" href="{{site.baseurl}}/assets/uswds/img/favicons/favicon-logo.png">
+  <!-- 192x192, as recommended for Android
+    https://updates.html5rocks.com/2014/11/Support-for-theme-color-in-Chrome-39-for-Android
+    -->
+  <link rel="icon" type="image/png" sizes="192x192" href="{{site.baseurl}}/assets/uswds/img/favicons/favicon-logo.png">
+  <!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+  <link rel="apple-touch-icon-precomposed" href="{{site.baseurl}}/assets/uswds/img/favicons/favicon-logo.png">
+  <!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{site.baseurl}}/assets/uswds/img/favicons/favicon-logo.png">
+  <!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{site.baseurl}}/assets/uswds/img/favicons/favicon-logo.png">
+  <!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{site.baseurl}}/assets/uswds/img/favicons/favicon-logo.png">
+  <!-- CSS
+    ================================================== -->
+  <!-- env: demo -->
+  <link rel="stylesheet" href="{{site.baseurl}}/assets/css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="/assets/js/women-in-it-toggle.js"></script>
+</head>
